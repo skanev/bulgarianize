@@ -21,6 +21,11 @@ module Bulgarianize
       words_for(self.numeric, gender)
     end
     
+    def as_leva
+      levas, cents = self.numeric.floor, self.numeric.%(1).*(100).to_i
+      "#{words_for(levas, :male)} лева и #{cents} стотинки"
+    end
+    
     protected
   
       def words_for(n, gender)

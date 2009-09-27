@@ -1,5 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
+require 'bigdecimal'
+
 describe "NumberToWords" do
   it "should work with simple numbers less than 10" do
     %w{нула едно две три четири пет шест седем осем девет}.each_with_index do |words, number|
@@ -85,6 +87,12 @@ describe "NumberToWords" do
   
   it "should work with big numbers in male gender" do
     121_121_121.bg.as_words(:male).should == 'сто двадесет и един милиона сто двадесет и една хиляди сто двадесет и един'
+  end
+  
+  it "should give numbers as levas" do
+    42.bg.as_leva.should == 'четиридесет и два лева и 0 стотинки'
+    3.14.bg.as_leva.should == 'три лева и 14 стотинки'
+    BigDecimal('3.05').bg.as_leva.should == 'три лева и 5 стотинки'
   end
   
 end
