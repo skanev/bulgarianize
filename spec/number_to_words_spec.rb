@@ -77,6 +77,14 @@ describe "NumberToWords" do
   
   it "should work with millions" do
     1_000_000.bg.as_words.should == 'един милион'
+    1_000_001.bg.as_words.should == 'един милион и едно'
+    2_000_200.bg.as_words.should == 'два милиона и двеста'
+    35_000_035.bg.as_words.should == 'тридесет и пет милиона тридесет и пет'
+    123_456_789.bg.as_words.should == 'сто двадесет и три милиона четиристотин петдесет и шест хиляди седемстотин осемдесет и девет'
+  end
+  
+  it "should work with big numbers in male gender" do
+    121_121_121.bg.as_words(:male).should == 'сто двадесет и един милиона сто двадесет и една хиляди сто двадесет и един'
   end
   
 end
