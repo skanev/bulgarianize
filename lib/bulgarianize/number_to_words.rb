@@ -18,11 +18,11 @@ module Bulgarianize
     HUNDREDS = %w[сто двеста триста четиристотин петстотин шестстотин седемстотин осемстотин деветстотин]
     
     def as_words(gender = :neuter)
-      words_for(self.numeric, gender)
+      words_for(self.numeric.to_i, gender)
     end
     
     def as_leva
-      levas, cents = self.numeric.floor, self.numeric.%(1).*(100).to_i
+      levas, cents = self.numeric.floor.to_i, self.numeric.%(1).*(100).to_i
       "#{words_for(levas, :male)} лева и #{cents} стотинки"
     end
     
