@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{bulgarianize}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Stefan Kanev"]
@@ -14,17 +14,22 @@ Gem::Specification.new do |s|
   s.email = %q{stefan.kanev@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.markdown"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "LICENSE",
-     "README.rdoc",
+     "README.markdown",
      "Rakefile",
      "VERSION",
+     "bulgarianize.gemspec",
      "lib/bulgarianize.rb",
+     "lib/bulgarianize/number_to_words.rb",
+     "lib/bulgarianize/proxies.rb",
      "spec/bulgarianize_spec.rb",
+     "spec/number_to_words_spec.rb",
+     "spec/proxies_spec.rb",
      "spec/spec_helper.rb"
   ]
   s.homepage = %q{http://github.com/skanev/bulgarianize}
@@ -34,6 +39,8 @@ Gem::Specification.new do |s|
   s.summary = %q{Adds pizzazz to your Bulgarian-speaking ruby code}
   s.test_files = [
     "spec/bulgarianize_spec.rb",
+     "spec/number_to_words_spec.rb",
+     "spec/proxies_spec.rb",
      "spec/spec_helper.rb"
   ]
 
